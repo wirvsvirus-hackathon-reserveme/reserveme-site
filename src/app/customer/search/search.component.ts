@@ -9,6 +9,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   private postcode: number;
+  supermarkets: string[];
 
   constructor(private fb: FormBuilder) {
   }
@@ -23,6 +24,9 @@ export class SearchComponent implements OnInit {
       ])
     });
     this.searchForm.statusChanges.subscribe(() => this.updateErrorMessages());
+    this.supermarkets = [
+      '1', '2', '3'
+    ];
   }
 
   updateErrorMessages() {
@@ -32,6 +36,9 @@ export class SearchComponent implements OnInit {
   search() {
     this.postcode = this.searchForm.get('postcode').value;
     console.log(this.postcode);
+  }
+
+  getTime() {
   }
 
 }

@@ -6,3 +6,24 @@
   </div>
   <button type="submit" class="btn mb-2" [ngClass]="searchForm.valid ? 'btn-secondary' : 'btn-warning'" [disabled]="!searchForm.valid">{{ searchForm.valid ? 'Finde Märkte' : 'Eingabe fehlerhaft' }}</button>
 </form>
+
+<h2 *ngIf="supermarkets.length != 0" class="content">Vorauswahl</h2>
+<div class="card" *ngFor="let market of supermarkets">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <img src="https://via.placeholder.com/900x600" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+          <p><span class="font-weight-bold">Name: </span>{{ 'Supermarkt' }}</p>
+          <p><span class="font-weight-bold">Adresse: </span>{{ 'Adresse' }}</p>
+          <p><span class="font-weight-bold">Öffnungszeiten: </span>{{ 'Öffnungszeiten' }}</p>
+        </div>
+        <div class="col-md-3 align-middle">
+          <button type="button" class="btn btn-outline-secondary btn-lg btn-get-time" (click)="getTime()">Termin wählen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
