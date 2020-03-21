@@ -1,0 +1,8 @@
+<h1>Supermarkt suchen</h1>
+<form class="form-inline" [formGroup]="searchForm" (ngSubmit)="search()">
+  <div class="form-group mb-2">
+    <label for="postcode" class="sr-only">Email</label>
+    <input formControlName="postcode" type="text" id="postcode" class="form-control" placeholder="Postleitzahl"/>
+  </div>
+  <button type="submit" class="btn mb-2" [ngClass]="searchForm.valid ? 'btn-secondary' : 'btn-warning'" [disabled]="!searchForm.valid">{{ searchForm.valid ? 'Finde Märkte' : 'Eingabe fehlerhaft' }}</button>
+</form>
